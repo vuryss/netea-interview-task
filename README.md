@@ -5,6 +5,7 @@
 One of the requirements in the interview task is 
 
 > The endpoint should be RESTful and naming recommendations compliant
+> 
 > The endpoint should be designed following the best practices
 
 However, REST defines operations on entities while here we just calculate progress completely using data from request 
@@ -121,9 +122,9 @@ Endpoint documentation available at: http://127.0.0.1:8000/api/doc
 
 ## Executing the automated tests
 
-`docker run -itu user --rm -v "$PWD":/app -w /app --add-host=host.docker.internal:host-gateway netea-interview-task bin/test`
+`docker run -itu user --rm -v "$PWD":/app -w /app netea-interview-task bin/test`
 
-After executing the tests, the code coverage report will be available under tests/_output/coverage directory.
+After executing the tests, the code coverage report will be available under `tests/_output/coverage` directory.
 
 ## Debug the project (on linux only)
 
@@ -143,4 +144,4 @@ Add to the docker run command:
 
 ### Psalm level 3
 
-`docker run -itu user --rm -v "$PWD":/app -w /app --add-host=host.docker.internal:host-gateway netea-interview-task vendor/bin/psalm`
+`docker run -itu user --rm -v "$PWD":/app -w /app netea-interview-task vendor/bin/psalm`
