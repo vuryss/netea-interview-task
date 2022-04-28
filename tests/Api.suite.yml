@@ -1,0 +1,11 @@
+actor: ApiTester
+namespace: App\Tests\Support
+modules:
+    enabled:
+        - \App\Tests\Support\Helper\Api
+        - PhpBrowser:
+              url: 'http://127.0.0.1:8000/'
+              timeout: 600
+        - REST:
+              url: 'http://127.0.0.1:8000/'
+              depends: PhpBrowser

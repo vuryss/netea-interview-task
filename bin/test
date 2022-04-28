@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SCRIPT_DIR=$(dirname "$BASH_SOURCE")
+cd $SCRIPT_DIR/..
+
+# Clean the project
+rm -rf var/cache/*
+bin/console cache:clear
+rm -rf tests/_output/*
+
+# Start the local dev server
+symfony server:start -d --no-tls
+
+# Run tests with coverage
+vendor/bin/codecept run --coverage --coverage-html coverage "$@"
